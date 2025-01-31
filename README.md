@@ -69,6 +69,104 @@ Pituitary apoplexy is a serious medical condition that requires immediate attent
 Based on the information provided, pituitary apoplexy is a possible diagnosis, but more tests, such as an MRI and hormone studies, are necessary to confirm.
 ```
 
+Here is the medical-English answer:
+```
+1. The patient's symptoms, such as sudden onset of headache, nausea, vomiting, and visual changes, are consistent with the symptoms of pituitary apoplexy, as described in the [Ref1] and [Ref2] statements.
+2. The patient's headache was described as sudden in onset, constant, bilateral, retro-orbital, and throbbing, which is consistent with the headache symptoms of pituitary apoplexy, as described in the [Ref3] and [Ref4] references.
+3. The patient's visual changes, including "blurry vision" and "double vision" affecting her left eye greater than her right, and photophobia, are also consistent with the symptoms of pituitary apoplexy, as described in the [Ref5], [Ref6], and [Ref7] references.
+4. The patient's difficulty keeping her left eye open, described as a weakness and not secondary to pain, could be related to oculomotor nerve palsy, cranial nerve palsy, or ophthalmoplegia, which are common symptoms of pituitary apoplexy, as described in the [Ref8], [Ref9], and [Ref10] references.
+5. The patient's laboratory results, including hyponatremia (low sodium level) and hypokalemia (low potassium level), could be indicative of adrenal insufficiency, which is a common complication of pituitary apoplexy, as described in the [Ref11] and [Ref12] references.
+6. The patient's past medical history and prescribed medications do not seem to be directly related to pituitary apoplexy, but it is essential to consider all possible factors, as described in the [Ref13] reference.
+7. Given the patient's symptoms and the potential for pituitary apoplexy to present with a range of symptoms, including visual changes and cranial nerve palsy, pituitary apoplexy should be considered as a possible diagnosis, and further evaluation, such as imaging studies, should be performed to confirm the diagnosis, as described in the [Ref14], [Ref15], and [Ref16] references.
+8. The patient's symptoms and laboratory results could also be consistent with other diagnoses, such as a pituitary tumor or lymphocytic hypophysitis, as described in the [Ref17] and [Ref18] references.
+9. Pituitary apoplexy is a medical emergency, and prompt diagnosis and hydrocortisone administration may be lifesaving, as mentioned in the [Ref19] statement.
+10. Based on the information provided, pituitary apoplexy is a possible diagnosis, but further evaluation and testing, such as magnetic resonance imaging (MRI) and hormonal studies, would be necessary to confirm the diagnosis, as described in the [Ref10] and [Ref12] references.
+```
+  
+  
+We used Llama_cpp to serve the model for inference:
+```
+PRMModelID11 = "Llama-3.3-70B-Instruct-Q8_0-00001-of-00002.gguf"
+llm101 = Llama(model_path=ModelID, n_gpu_layers=-1, n_ctx=ContextTokenCount )
 
+ggml_cuda_init: GGML_CUDA_FORCE_MMQ:    no
+ggml_cuda_init: GGML_CUDA_FORCE_CUBLAS: no
+ggml_cuda_init: found 2 CUDA devices:
+  Device 0: Quadro RTX 8000, compute capability 7.5, VMM: yes
+  Device 1: Quadro RTX 8000, compute capability 7.5, VMM: yes
+11 Fri Jan 31 09:03:00 2025
 
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.183.01             Driver Version: 535.183.01   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  Quadro RTX 8000                Off | 00000000:3B:00.0 Off |                  Off |
+| 33%   25C    P2              65W / 260W |  40324MiB / 49152MiB |      2%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   1  Quadro RTX 8000                Off | 00000000:AF:00.0  On |                  Off |
+| 33%   32C    P2              63W / 260W |  40402MiB / 49152MiB |      2%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    0   N/A  N/A      3862      G   /usr/lib/xorg/Xorg                            4MiB |
+|    0   N/A  N/A      8800      C   ...e/ghtw30s/virenv20240420/bin/python    40316MiB |
+|    1   N/A  N/A      3862      G   /usr/lib/xorg/Xorg                          544MiB |
+|    1   N/A  N/A      4138      G   /usr/bin/gnome-shell                        117MiB |
+|    1   N/A  N/A      7740      G   ...irefox/5647/usr/lib/firefox/firefox      203MiB |
+|    1   N/A  N/A      8800      C   ...e/ghtw30s/virenv20240420/bin/python    39532MiB |
++---------------------------------------------------------------------------------------+
+```
+
+We used Apache Lucene to choose most relevant factual statements for each given question:
+```
+def MssBmlLucOsSearcher( LlmQstn,PromptFormat  ,PRMP56,ExpnddQuery,LucQFilter12 ,ircount  ,CollectReportL ) :
+    ### search lucene index
+    
+    # MssBml OS searcher
+    # invoke MssBml luc java OS searcher
+    P56=PRMP56
+    
+    #
+    #UnboundLocalError: local variable 're' referenced before assignment
+    import re
+    
+    #
+    if (LucQFilter12 !='') :
+        #ExpnddQuery = ExpnddQuery +' '+ LucQFilter1
+        ExpnddQuery = ExpnddQuery +' '+ LucQFilter12
+    #else:
+    
+    
+    #
+    ExpnddQuery = re.sub(r'"',r'\\"',ExpnddQuery)
+    lucq = '"' + ExpnddQuery + '"'
+    CollectReportL.append(str([ ('lucq',lucq) ]))
+
+    
+    ##
+    bshcmmndrsltL = !java -cp /home/ghtw30s/java/OsIndexerSH.jar:/home/ghtw30s/java/MssBml/lucene-core-9.7.0.jar:/home/ghtw30s/java/MssBml/lucene-analysis-common-9.7.0.jar:/home/ghtw30s/java/MssBml/lucene-queryparser-9.7.0.jar:/home/ghtw30s/java/MssBml/lucene-backward-codecs-9.7.0.jar  MssBml.OsSearcher $P56  $lucq $ircount
+    #
+    bshcmmndrslt = "\n".join(bshcmmndrsltL)
+    #
+    print('bshcmmndrslt',bshcmmndrslt)
+    ## capture IDs
+    import re
+    IrIdsL = re.findall(r'\. (\d+) ' ,bshcmmndrslt)
+    #
+    print('IrIdsL',len(IrIdsL))
+    print('IrIdsL',IrIdsL)
+    print(time.asctime( time.localtime( time.time() ) ))
+    
+    return lucq, IrIdsL
+#
+```
 
